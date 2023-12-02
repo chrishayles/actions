@@ -1,5 +1,7 @@
 name: hello-world
 on: push
+env:
+  REPO_SEC: ${{secrets.REPO_SEC}}
 jobs:
   my-job:
     runs-on: ubuntu-latest
@@ -7,4 +9,4 @@ jobs:
       - name: FirstStep
         run: echo "Hello World!"
       - name: SecondStep
-        run: echo "${{secrets.REPO_SEC}}"
+        run: echo $REPO_SEC
